@@ -31,7 +31,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6gh-Ex-Fcr">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="idCell" id="6gh-Ex-Fcr" customClass="BoardCell" customModule="_InARow" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="T1H-oQ-wqr">
@@ -50,8 +50,15 @@
                                                 <constraint firstItem="Ale-na-SNq" firstAttribute="centerY" secondItem="T1H-oQ-wqr" secondAttribute="centerY" id="kL5-lz-aea"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="image" destination="Ale-na-SNq" id="vpY-lf-KhV"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hY4-vl-4J1"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Itu-bD-F4j"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgy-1R-3VC">
                                 <rect key="frame" x="131.33333333333331" y="59.000000000000007" width="130.33333333333331" height="26.333333333333336"/>
@@ -81,6 +88,10 @@
                             <constraint firstItem="Xgy-1R-3VC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vAa-Oo-npb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="qwP-Lq-cRb" id="beL-rW-d3d"/>
+                        <outlet property="turnImage" destination="P3o-s8-7KA" id="gY0-W2-whY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
